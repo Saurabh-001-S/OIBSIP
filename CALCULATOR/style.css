@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@500&display=swap');
+
+:root {
+   --bg-primary: #4D8AC8;
+   --bg-secondary: #EBF5FF;
+   --input-bg: #CCE5FF;
+   --btn-bg1: #A2D0FA;
+   --btn-col1: #4E89C8;
+   --btn-col2: #163C5F;
+   --Cta: #4D8AC8;
+   --main-font: 'Poppins', sans-serif;
+}
+
+* {
+   padding: 0;
+   margin: 0;
+   border: none;
+   outline: none;
+}
+
+/* UTILITY CLASSES */
+.flex_col {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+}
+
+.m-auto {
+   margin: auto;
+}
+
+.btnBg1 {
+   background-color: var(--btn-bg1);
+   color: var(--btn-col1);
+   border-radius: 5px;
+}
+
+.btnBg2 {
+   background-color: var(--input-bg);
+   color: var(--btn-col2);
+   border-radius: 5px;
+   font-weight: 700 !important;
+}
+
+/* Content */
+
+.container {
+   background-color: var(--bg-primary);
+   width: 100dvw;
+   height: 100dvh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+}
+
+.content {
+   background-color: var(--bg-secondary);
+   border-radius: 0.85rem;
+   display: grid;
+   grid-template-columns: auto;
+   grid-template-rows: repeat(2, auto);
+   gap: 1rem;
+   padding: 2rem 1.3rem;
+   width: fit-content;
+   height: fit-content;
+   inset: 0;
+}
+
+.input_Box {
+   background: var(--bg-secondary);
+   background-color: var(--input-bg);
+   height: 80px;
+   padding: 0.8rem 1rem;
+   gap: 0;
+}
+
+.input_Box .input {
+   width: 100%;
+   height: 40%;
+   background: transparent;
+   color: var(--btn-col1);
+   font-family: var(--main-font);
+   font-size: 1rem;
+   font-weight: 500;
+   line-height: 1rem;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   letter-spacing: 0.03em;
+}
+
+.input_Box #result {
+   width: 100%;
+   height: 60%;
+   color: var(--btn-col2);
+   font-family: var(--main-font);
+   font-size: 1.5rem;
+   font-weight: 500;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.input_Buttons {
+   --btn-width: 50px;
+   --btn-height: 40px;
+   --gap-btn: 1rem;
+}
+
+.input_Buttons .midRow {
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(5, var(--btn-width));
+   grid-template-rows: repeat(4, var(--btn-height));
+   gap: var(--gap-btn);
+}
+
+.input_Buttons .lastRow {
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(5, var(--btn-width));
+   grid-template-rows: repeat(1, var(--btn-height));
+   gap: var(--gap-btn);
+}
+
+.btn {
+   width: 50px;
+   height: 40px;
+   font-family: var(--main-font);
+   font-size: 1rem;
+   font-weight: 500;
+   line-height: 1.1rem;
+   cursor: pointer;
+}
+
+.confirm {
+   width: 117px;
+   height: 40px;
+   background-color: var(--Cta);
+   border-radius: 5px;
+   color: var(--bg-secondary);
+   font-weight: 700;
+   letter-spacing: 0.1em;
+}
+
+@media screen and (max-width:500px) {
+   .content {
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem 1rem;
+   }
+
+   .input_Box {
+      height: 70px;
+      width: 241px;
+   }
+
+   .input_Box .input {
+      font-size: .80rem;
+   }
+
+   .input_Box #result {
+      font-size: 1.3rem;
+   }
+
+   .input_Buttons {
+      width: 273px;
+      --btn-width: 45px;
+      --btn-height: 35px;
+      --gap-btn: 0.75rem;
+   }
+
+
+   .input_Buttons .midRow {
+      grid-template-columns: repeat(5, var(--btn-width));
+      grid-template-rows: repeat(4, var(--btn-height));
+      gap: var(--gap-btn);
+   }
+
+   .input_Buttons .lastRow {
+      grid-template-columns: repeat(5, var(--btn-width));
+      grid-template-rows: repeat(1, var(--btn-height));
+      gap: var(--gap-btn);
+   }
+
+   .btn {
+      width: 45px;
+      height: 35px;
+      font-size: .9rem;
+   }
+
+   .confirm {
+      width: 102px;
+   }
+}
+
+@media screen and (max-width:330px) {
+   .content {
+      width: 100dvw;
+      height: auto !important;
+      border-radius: 0;
+   }
+
+   .input_Box {
+      padding: 0.8rem 0.5rem;
+      margin: auto;
+      border-radius: 0.2rem;
+   }
+
+   .btn {
+      font-size: .8rem;
+   }
+
+   .input_Buttons {
+      width: 257px;
+      gap: 0.5rem;
+   }
+
+   .input_Buttons .midRow,
+   .input_Buttons .lastRow {
+      gap: 0.5rem;
+   }
+
+   .confirm {
+      width: 98px;
+   }
+}
