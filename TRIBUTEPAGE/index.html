@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Tribute</title>
+</head>
+
+<body>
+   <div class="container">
+      <div class="sectionToogle">
+         <input type="radio" value="sec1" name="sec" id="sec1">
+         <input type="radio" value="sec2" name="sec" id="sec2">
+         <input type="radio" value="sec3" name="sec" id="sec3">
+      </div>
+      <div class="content">
+         <section id="section1" class="s1">
+            <div class="title">
+               <h1>A. P. J. ABDUL KALAM</h1>
+               <h3>1931 – 2015</h3>
+            </div>
+            <div class="tributePoster">
+               <img src="./APJ.jpg" alt="poster">
+            </div>
+            <div class="biography">
+               <h1>biography</h1>
+               <h5>Avul Pakir Jainulabdeen Abdul Kalam (15 October 1931 – 27 July 2015), also known as A. P. J. Abdul
+                  Kalam, was an Indian aerospace scientist and politician who served as the 11th president of India from
+                  2002 to 2007. He was born and raised in Rameswaram, Tamil Nadu and studied physics and aerospace
+                  engineering. He spent the next four decades as a scientist and science administrator, mainly at the
+                  Defence Research and Development Organisation and Indian Space Research Organisation and
+                  was intimately involved in India's civilian space programme and military missile development efforts.
+                  Kalam is widely regarded as the father of India's missile program, and is popularly known as the
+                  "Missile Man of India" for his work on the development of ballistic missile and launch vehicle
+                  technology.
+               </h5>
+            </div>
+         </section>
+         <section id="section2" class="s2">
+            <div class="title">
+               <h1>HOMI JEHANGIR BHABHA</h1>
+               <h3>1909 - 1966</h3>
+            </div>
+            <div class="tributePoster">
+               <img src="./HJB.jpg" alt="poster">
+            </div>
+            <div class="biography">
+               <h1>biography</h1>
+               <h5>Homi Jehangir Bhabha (1909-1966) was a renowned Indian nuclear physicist and a visionary leader who
+                  played a pivotal role in the development of India's nuclear and space programmes. He is widely
+                  regarded as the "father of the Indian nuclear programme". Bhabha was born into a wealthy Parsi family
+                  in Bombay (now Mumbai) on October 30, 1909. He received his early education at the Cathedral and John
+                  Connon School and Elphinstone College in Bombay. In 1927, he went to England to study mechanical
+                  engineering at the University of Cambridge. However, he soon switched to physics and earned a
+                  doctorate in 1935.Bhabha's legacy is immense. He is credited with laying the foundation for India's
+                  nuclear and space programmes, which have played a major role in the country's development. He was also
+                  a brilliant scientist who made significant contributions to the field of physics. Bhabha is an
+                  inspiration to generations of Indian scientists and engineers.
+               </h5>
+            </div>
+         </section>
+         <section id="section3" class="s3">
+            <div class="title">
+               <h1>Jehangir Ratanji Dadabhoy Tata</h1>
+               <h3>1904 - 1993</h3>
+            </div>
+            <div class="tributePoster">
+               <img src="./JRTATA.jpg" alt="poster">
+            </div>
+            <div class="biography">
+               <h1>biography</h1>
+               <h5>Jehangir Ratanji Dadabhoy Tata (1904-1993), popularly known as J.R.D. Tata, was an Indian aviator,
+                  industrialist, entrepreneur, and chairman of the Tata Group. He is widely regarded as the "father of
+                  Indian civil aviation" and played a key role in the development of the Tata Group into one of the
+                  largest and most respected conglomerates in India.
+                  Tata was born into a wealthy Parsi family in Paris, France on July 29, 1904. He received his education
+                  in England and France. In 1929, he became one of the first Indians to be granted a commercial pilot's
+                  license.
+                  J.R.D. Tata's legacy is immense. He is credited with helping to shape the modern Indian economy and
+                  society. He is an inspiration to generations of Indian entrepreneurs and business leaders.
+               </h5>
+            </div>
+         </section>
+      </div>
+   </div>
+   <script>
+      const inputs = document.querySelectorAll('input');
+      inputs[0].setAttribute("checked", "checked");
+      Array.from(inputs).forEach((button) => {
+         button.addEventListener('click', (e) => {
+            console.log(e.target.value)
+            if (e.target.value === 'sec2') {
+               document.getElementById("section2").classList.add('transSecX1000');
+               setTimeout(() => {
+                  document.getElementById("section1").classList.remove('transSecX1000')
+                  document.getElementById("section3").classList.remove('transSecX2000')
+               }, 400);
+            }
+            else if (e.target.value === 'sec3') {
+               document.getElementById("section3").classList.add('transSecX2000')
+               setTimeout(() => {
+                  document.getElementById("section1").classList.remove('transSecX1000')
+                  document.getElementById("section2").classList.remove('transSecX1000')
+               }, 400);
+            } else {
+               setTimeout(() => {
+                  document.getElementById("section2").classList.remove('transSecX1000')
+                  document.getElementById("section3").classList.remove('transSecX2000')
+               }, 400);
+            }
+         })
+      })
+   </script>
+</body>
+
+</html>
