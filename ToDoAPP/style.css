@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+   --rich-black: #001524ff;
+   --caribbean-current: #15616dff;
+   --papaya-whip: #ffecd1ff;
+   --orange-wheel: #ff7d00ff;
+   --sienna: #78290fff;
+   --p-font: 'Lato', sans-serif;
+   --head-font: 'Rajdhani', sans-serif;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   list-style-type: none;
+   text-decoration: none;
+}
+
+*:focus {
+   outline: none;
+}
+
+/* Utility Classes */
+h1,
+h2,
+h3,
+h4,
+h5 {
+   font-family: var(--head-font);
+   font-weight: 900;
+   letter-spacing: 0.03em;
+   font-stretch: 250%;
+}
+
+p {
+   font-family: var(--p-font);
+   font-weight: 500;
+   letter-spacing: 0.03em;
+}
+
+.bg-richBlack {
+   background-color: var(--rich-black);
+}
+
+.bg-caribbean {
+   background-color: var(--caribbean-current);
+}
+
+.bg-papaya {
+   background-color: var(--papaya-whip);
+}
+
+.bg-orange {
+   background-color: var(--orange-wheel);
+}
+
+.col-richBlack {
+   color: var(--rich-black);
+}
+
+.col-caribbean {
+   color: var(--caribbean-current);
+}
+
+.col-papaya {
+   color: var(--papaya-whip);
+}
+
+.col-orange {
+   color: var(--orange-wheel);
+}
+
+.col-sienna {
+   color: var(--sienna);
+}
+
+.flexRow {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+.flexCol {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.btn {
+   background: linear-gradient(0deg, var(--rich-black), var(--caribbean-current));
+   font-size: 20px;
+   padding: 0.5rem 0.7rem;
+   font-family: var(--p-font);
+   border-radius: 10px;
+   border: none;
+   border: 5px inset var(--caribbean-current);
+   transition: color 100ms ease-in;
+}
+
+.btn:hover,
+.btn:focus {
+   color: var(--orange-wheel);
+}
+
+.visibility {
+   visibility: hidden;
+}
+
+/* Componenet Style  */
+
+main {
+   gap: 1.5rem;
+}
+
+header {
+   width: 100%;
+   height: 70px;
+   padding: 1rem 2rem;
+   position: relative;
+}
+
+.header_title {
+   align-items: start;
+   justify-content: start;
+}
+
+/* <<--------- Modal --------->> */
+.modal {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 9999999;
+   background: rgba(0, 21, 36, 0.4);
+   -webkit-backdrop-filter: blur(5px);
+   backdrop-filter: blur(5px);
+   display: flex;
+   overflow: auto;
+   visibility: hidden;
+}
+
+.toggleModal {
+   width: 100vw;
+   height: 100vh;
+   visibility: visible;
+}
+
+.overlayModal {
+   margin: 0 auto;
+   padding: 1.5rem 1rem;
+   width: 500px;
+   height: max-content;
+   border-radius: 5px;
+}
+
+.overlayModal #detailContainer {
+   gap: 1.2rem;
+}
+
+.overlayModal>div p>span:first-child {
+   font-size: 1.2rem;
+   font-family: var(--head-font);
+}
+
+.overlayModal>div p>span:last-child {
+   font-size: 1rem;
+   font-family: var(--p-font);
+}
+
+.overlayModal>div p:last-child {
+   font-size: 1.2rem;
+   font-family: var(--head-font);
+}
+
+.slide-bottom {
+   animation: slide-bottom 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) alternate both;
+}
+
+@keyframes slide-bottom {
+   0% {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+   }
+
+   100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+   }
+}
+
+section {
+   width: 100%;
+}
+
+.editform {
+   gap: 1rem;
+}
+
+.editform input,
+.editform textarea {
+   width: 400px;
+   padding: 0.5rem .6rem;
+   font-size: 18px;
+   border: none;
+   font-family: var(--p-font);
+   border-radius: 5px;
+}
+
+.editform textarea {
+   resize: none;
+   height: 150px;
+}
+
+/* <<--------- Form Container --------->> */
+.input_Container {
+   border-radius: 3px;
+}
+
+.input_Container form {
+   width: max-content;
+   height: max-content;
+   padding: 1rem;
+   gap: 1rem;
+   border-radius: 10px;
+}
+
+.input_Container input,
+.input_Container textarea {
+   width: 700px;
+   padding: 0.5rem .6rem;
+   font-size: 20px;
+   border: none;
+   font-family: var(--p-font);
+}
+
+.input_Container textarea {
+   resize: none;
+   height: 150px;
+}
+
+.list_Container {
+   width: 100%;
+   padding: 1.5rem;
+   gap: 1rem;
+   justify-content: space-between;
+}
+
+.list_pending,
+.list_progressive,
+.list_complete {
+   width: calc(100%/3.2);
+}
+
+.list_heading {
+   width: 100%;
+   height: 45px;
+}
+
+.list_items {
+   padding: 1.2rem 0.8rem;
+   gap: 1rem;
+   width: 100%;
+   height: 265px;
+   justify-content: flex-start;
+   overflow: hidden scroll;
+}
+
+.list_Container ::-webkit-scrollbar {
+   width: 10px;
+}
+
+.list_Container ::-webkit-scrollbar-track {
+   background: var(--papaya-whip);
+}
+
+.list_Container ::-webkit-scrollbar-thumb {
+   background: #888;
+}
+
+.list_items li {
+   width: 100%;
+   height: 40px;
+}
+
+.list_items li .list_details {
+   width: 90%;
+   height: 40px;
+   justify-content: space-between;
+   gap: 1rem;
+}
+
+.list_details p {
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+.button_container {
+   gap: 0.3rem;
+}
+
+.button_container button {
+   background: transparent;
+   border: none;
+   cursor: pointer;
+}
+
+@media screen and (max-width:760px) {
+   .input_Container {
+      width: 95%;
+   }
+
+   .input_Container form,
+   .input_Container form input,
+   .input_Container form textarea {
+      width: 100%;
+   }
+
+   .list_Container {
+      flex-direction: column;
+   }
+
+   .list_pending,
+   .list_progressive,
+   .list_complete {
+      width: 100%;
+   }
+}
+
+@media screen and (max-width:500px) {
+   main {
+      gap: 1rem;
+   }
+
+   header {
+      height: 60px;
+   }
+
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+      font-size: 23px;
+   }
+
+   .input_Container input,
+   .input_Container textarea {
+      font-size: 15px;
+   }
+
+   .btn {
+      font-size: 15px;
+   }
+
+   .overlayModal {
+      padding: 1.5rem 1rem;
+      width: 95%;
+   }
+
+   .editform input,
+   .editform textarea {
+      width: 90%;
+   }
+
+   #detailContainer {
+      padding: 1rem 0;
+      width: 100%;
+   }
+}
+
+@media screen and (max-width: 350px) {
+   .btn {
+      font-size: 10px;
+      padding: 0.3rem 0.6rem;
+   }
+
+   .list_details p {
+      font-size: 12px;
+   }
+}

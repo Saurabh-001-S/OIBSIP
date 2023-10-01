@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>To Do APP</title>
+</head>
+
+<body>
+   <main class="flexCol">
+      <header class="bg-richBlack col-orange">
+         <div class="header_title flexRow">
+            <h1 class="col-orange">To-Do List App</h1>
+         </div>
+      </header>
+
+      <!-- Modal  -->
+      <div class="modal" id="modal">
+         <div class="overlayModal bg-richBlack" id="overlayModal">
+            <!-- Detail List section -->
+            <div id="detailContainer" class="flexCol"></div>
+
+            <!-- Edit List section  -->
+            <form class="flexCol editform" id="edit-form"></form>
+
+         </div>
+      </div>
+
+      <!-- Section -->
+      <section class="flexCol" id="sec1">
+         <div class="input_Container bg-richBlack">
+            <form action="#" class="flexCol" id="task-form">
+               <input class="bg-caribbean col-papaya" tabindex="1" type="text" id="title" placeholder="Title" required>
+               <textarea class="bg-caribbean col-papaya" name="description" placeholder="Description" id="description"
+                  cols="30" rows="10" required></textarea>
+               <button class="bg-orange col-papaya btn" type="submit">
+                  Add to List
+               </button>
+            </form>
+         </div>
+      </section>
+
+      <section class="flexCol section" id="sec2">
+         <div class="list_Container bg-caribbean flexRow">
+            <div class="list_pending">
+               <div class="list_content bg-richBlack">
+                  <div class="list_heading flexRow col-sienna bg-papaya">
+                     <h2>Pending</h2>
+                  </div>
+                  <ul class="list_items flexCol" id="pendingUl">
+
+                  </ul>
+               </div>
+            </div>
+
+            <div class="list_progressive bg-richBlack">
+               <div class="list_content bg-richBlack">
+                  <div class="list_heading flexRow col-sienna bg-papaya">
+                     <h2>Progressive</h2>
+                  </div>
+                  <ul class="list_items flexCol" id="progressUl">
+
+                  </ul>
+               </div>
+            </div>
+
+            <div class="list_complete bg-richBlack">
+               <div class="list_content bg-richBlack">
+                  <div class="list_heading flexRow bg-papaya col-sienna">
+                     <h2>Completed</h2>
+                  </div>
+                  <ul class="list_items flexCol" id="completedUl">
+
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+   <script src="main.js"></script>
+</body>
+
+</html>
